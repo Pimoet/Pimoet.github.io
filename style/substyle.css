@@ -31,7 +31,7 @@ h1{
 }
 
 .parallax {
-
+    overflow-y: none;
     margin-left: 0%;
     height: 100vw;
     background-attachment: fixed;
@@ -51,6 +51,12 @@ section div{
     margin-bottom: 0%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+
+section img{
+    width: 85%;
+    margin-top: 2em;
 }
 
 .title{
