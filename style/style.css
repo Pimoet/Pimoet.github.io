@@ -54,13 +54,20 @@ font-weight: var(--fw-400);
 .TopName{
   color: white;
   padding-left: 23%;
+  align-self: center;
+  font-size: 300%;
 }
 .TopDesc{
 color: white;
 padding-left: 23%;
 margin-top: -1%;
+font-size: 300%;
 }
 
+.SkillsText{
+  color: white;
+  margin-left: 23%;
+}
 /* skills */
 
 .Skills{
