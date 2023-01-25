@@ -16,12 +16,30 @@
     --fs-300: 0.6875rem;
     --fs-400: 0.8125rem;
     --fs-500: 1.25rem;
-  }
+}
+::-webkit-scrollbar {
+  width: 16px;
+}
 
+::-webkit-scrollbar-track {
+  background-color: #1b1b1e;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 56px;
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
 
 html, body{
 font-family: Arial, Helvetica, sans-serif;
-background: whitesmoke;
+background: #29282b;
 text-decoration: none;
 margin: 0;
 height: 100%;
@@ -32,11 +50,20 @@ font-family: var(--ff-primary);
 font-weight: var(--fw-400);
 
 
-
 }
-  
+
+/* title  and about me */
 .titleFont{
   font-family: var(--ff-secondary);
+}
+.TitleText{
+  color: white;
+  margin-left: 61%;
+}
+.aboutMeText{
+  color: white;
+  margin-left: 61%;
+  margin-right: 15%;
 }
 
 h1,
@@ -240,15 +267,17 @@ a:hover {
 }
 
 
-/* Language Switcher */
 
 
 .bannerPicture{
   max-width: 100%;
   max-height: 100vh;
   width: auto;
-  margin: auto;
-  margin-left: 10%;
+  float: left;
+  margin-top: 1%;
+  margin-left: 23%;
+  border-radius: 10px;
+  width: 36%;
 }
 
 .form {
