@@ -10,103 +10,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <link rel="stylesheet"  href="style/style.css"/>
     <script src="https://kit.fontawesome.com/34d08e4a8f.js" crossorigin="anonymous"></script>
-    <script src="scripts.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
 <body>
-<div class="content">
-<h1 class="TopName"> Pim Slegers</h1>
-<h1 class="TopDesc"> Software Developer</h1>
-<br>
-<h2 class="SkillsText">My skills</h2>
+    <header class="primary-header">
+        <div class="container">
+            <h1 class="head-line">Pim Slegers</h1>
+            <h2 class="under-line">Software Developer</h2>
+            <h3 class="skills-text">My skills</h3>
+            <div class="skills">
+                <p>Visual Studio</p>
+                <p>Unity</p>
+                <p>C#</p>
+                <p>GameDevelopment</p>
+                <p>Musician</p>
+                <p>Percusionist</p>
+            </div>
+        </div>
+    </header>
 
-<div>
-  <h3 class="Skills"> VisualStudio Unity c# GameDevelopment Musician percusionist</h3>
-</div>
-
-  <img class="bannerPicture" src="pictures/aboutmebg.jpeg" alt="" height="x">
-
-    <div class="Title">
-      <h1 class="TitleText">About Me</h1>
-       <h3 class="aboutMeText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi recusandae aperiam officia qui veniam porro beatae, rem, laboriosam quis doloribus aut eveniet amet iusto expedita sed consectetur esse! Alias, sapiente? <BR> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos voluptatibus placeat necessitatibus sunt dolore obcaecati dolorem mollitia voluptate ex earum sint ea ipsa commodi adipisci quasi ab, deleniti perspiciatis aut? </h3> 
-    </div>
-
-
-        <main class="testimonial-grid">
-            <article class="testimonial grid-col-span-2 flow bg-primary-400 quote text-neutral-100">
-              <div class="flex">
-                <div>
-                  <img  src="" alt=""  width="auto" style="margin: 0%;" height="100px" >
+    <main>
+        <div class="container">
+            <div class="about-me">
+                <img class="banner" src="images/aboutmebg.jpeg" alt="Profile picture">
+                <div class="about-text">
+                    <p>About Me</p>
+                    <p class="empty">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi recusandae aperiam officia qui veniam porro beatae, rem, 
+                        laboriosam quis doloribus aut eveniet amet iusto expedita sed consectetur esse! Alias, sapiente? Lorem ipsum dolor sit amet consectetur, 
+                        adipisicing elit. Quos voluptatibus placeat necessitatibus sunt dolore obcaecati dolorem mollitia voluptate ex earum sint ea ipsa commodi 
+                        adipisci quasi ab, deleniti perspiciatis aut? </p> 
                 </div>
-                <div>
-                  <h1 style="font-size: 10px; padding-top: 20%;" class="titleFont"></h1>
-                  <p class="position"></p>
+            </div>
+        </div>
+    </main>
+
+    <section>
+        <h3 class="projects-text | container">My projects</h3>
+        <div class="container testimonial-grid">
+            <article class="testimonial">
+                <div class="flex">
+                    <img src="images/aboutmebg.jpeg" alt="PlayProject">
+                    <div>
+                        <p class="titleFont">Play project</p>
+                    </div>
                 </div>
-              </div>
-              <p style="text-align: left;" class="" > 
-               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione assumenda harum illum obcaecati labore similique aut, sequi in vero, animi nisi reiciendis amet! Veritatis temporibus unde ea eos odit ut?           <p>
-              
-              <a class="moreInformation" href="pages/PlayProject.html"> Click for more info</a>
-              </p>
+                <div class="testimonial-text">
+                    <p class="text"> 
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione assumenda harum illum obcaecati labore similique aut,
+                        sequi in vero, animi nisi reiciendis amet!
+                    </p>
+                    <a class="moreInformation" href="pages/PlayProject.html">Click for more info</a>
+                </div>
             </article>
-          
-            <article class="testimonial flow bg-secondary-400 text-neutral-100">
-            <div class="flex">
-              <div>
-                <img src="pictures/imposterbot.png" alt="" height="" width="100%">
-              </div>
-              <div>
-                <h2 style="font-size: 10px;" class="titleFont">Imposterbot</h2>
-                <p class=""></p>
-              </div>
-            </div>
-            <p>
-             Dit is mijn eerste python project de "Imposterbot" Het is een bot voor discord. De bot doet verschillende dingen gerelatteerd aan Valorant, Counter-strike en Apex legends
-            </p>
-            <p>
-              
-              <a class="moreInformation"href=> Click for more info</a>
-            </p>
-          </article>
-          <article class="testimonial flow bg-neutral-100 text-secondary-400">
-            <div class="flex">
-              <div>
-                <img src="pictures/Obamashop_bg.png" width="100px" height="100px" alt="">
-              </div>
-              <div>
-                <h2 style="font-size: 10px;" class="titleFont">Webshop project</h2>
-                <p class="position"></p>
-              </div>
-            </div>
-            <p>
-              Dit is mijn Webshop. <br>
-              Deze heb ik gemaakt voor het vak programming en dit was mijn eerste javascript project.
-            <p>
-              
-              <a class="moreInformation"href=> Click for more info</a>
-            </p>
-          </article>
-          <article class="testimonial grid-col-span-2 flow bg-secondary-500 text-neutral-100">
-            <div class="flex">
-              <div>
-                <img class="border-primary-400" src="pictures/Screenshot_1.png" alt="#" height="100px" width="100px">
-              </div>
-              <div>
-                <h2 class="name">Bootstrap immitatie</h2>
-                <p class="position"></p>
-              </div>
-            </div>
-            <p>
-              Dit is mijn bootstrap imitatie project.<br>
-              dit project was ervoor om ons te leren kennen met css stylesheets.<br>  
-            </p>
-            <p>
-              
-              <a class="moreInformation"href=> Click for more info</a>
-            </p>
-          </article>
+            
+            <article class="testimonial">
+                <div class="flex">
+                    <img src="images/imposterbot.png" alt="Imposterbot">
+                    <div>
+                        <p class="titleFont">Imposterbot</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    <p class="text"> 
+                        Dit is mijn eerste python project de "Imposterbot". Het is een bot voor discord. 
+                        De bot doet verschillende dingen gerelateerd aan Valorant, 
+                        Counter-strike en Apex legends
+                    </p>
+                    <a class="moreInformation" href="pages/ImposterBot.html">Click for more info</a>
+                </div>
+            </article>
 
+            <article class="testimonial">
+                <div class="flex">
+                    <img src="images/Obamashop_bg.png" alt="JavascriptShop">
+                    <div>
+                        <p class="titleFont">Webshop project</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    <p class="text">
+                        Deze webshop heb ik gemaakt voor het vak programming en dit was mijn eerste javascript project.
+                    </p>
+                    <a class="moreInformation" href="pages/Webshop.html">Click for more info</a>
+                </div>
+            </article>
 
-        </main>
-</div>
+            <article class="testimonial">
+                <div class="flex">
+                    <img src="images/bootstrap_imitatie.png" alt="Bootstrap imitatie">
+                    <div>
+                        <p class="titleFont">Bootstrap imitatie</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    <p class="text">
+                        Bootstrap imitatie project, dit was bedoelt om een CSS framework te leren kennen.<br>  
+                    </p>
+                    <a class="moreInformation" href="pages/Bootstrap.html">Click for more info</a>
+                </div>
+            </article>
+        </div>
+    </section>
 </body>
 </html>
