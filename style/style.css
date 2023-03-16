@@ -169,6 +169,7 @@ p[data-width="wide"] {
 }
 
 .skills {
+  text-decoration: none;
   display: flex;
   font-size: var(--fs-400);
   justify-content: space-between;
