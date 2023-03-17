@@ -293,3 +293,22 @@ section .layout:nth-child(3) {
   display: flex;
   gap: var(--gap, 1rem);
 }
+
+/* buttons */
+.moreInformation{
+  background-color: var(--clr-primary-100);
+  border-radius: 10rem;
+  color: var(--clr-bg-100);
+  display: inline-block;
+  font-size: var(--fs-400);
+  padding: var(--size-400);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .3s;
+  width: fit-content;
+}
+
+.moreInformation:hover {
+  background-color: var(--clr-bg-100);
+  color: var(--clr-primary-100);
+}
