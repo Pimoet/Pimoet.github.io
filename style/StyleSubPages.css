@@ -235,7 +235,7 @@ img {
   color: var(--clr-primary-100);
   display: flex;
   font-size: var(--fs-600);
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-decoration: none;
 }
 
