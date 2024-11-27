@@ -83,6 +83,7 @@ if (this.followingMouse) {
 
 // Setup Function
 function setup() {
+  
 c1 = color(0); //
 c2 = color(50, 50, 50);
 
@@ -90,7 +91,6 @@ frameRate(FPS);
 let canvas = createCanvas(windowWidth, windowHeight);
 canvas.position(0, 0);
 canvas.style('z-index', '-1'); // Ensure canvas is behind other content
-// Your setup code
 
 //spawn particles
 for (let i = 0; i < numParticles; i++) {
