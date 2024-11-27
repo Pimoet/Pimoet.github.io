@@ -1,4 +1,3 @@
-// Global Variables
 let objs = [];
 
 let FPS = 60;

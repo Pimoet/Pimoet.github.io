@@ -94,7 +94,7 @@ img,
 picture,
 svg {
   max-width: 100%;
-  display: block;
+  /* display: flex; */
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -130,7 +130,7 @@ body {
 }
 
 p:not([class]) {
-  max-width: 32ch;
+  /* max-width: 32ch; */
 }
 
 p[data-width="wide"] {
