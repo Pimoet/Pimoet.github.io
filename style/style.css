@@ -66,11 +66,27 @@ canvas {
 
 html,
 body {
+    overflow-y: scroll;  /* Keep scrolling functionality */
     overflow-x: hidden;
     height: 100vh;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Hide scrollbar for Firefox */
+body {
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Optional: For Internet Explorer/Edge (older versions) */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
 }
 
 body {
