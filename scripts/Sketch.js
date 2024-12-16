@@ -89,7 +89,7 @@ function setup() {
 setTimeout(() => {
   resizeCanvas(windowWidth, windowHeight);
   RefreshfreshPage();
-}, 200);
+}, 500);
 
 function RefreshfreshPage(){
   if (happened == false){
