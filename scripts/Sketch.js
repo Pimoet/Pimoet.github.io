@@ -10,6 +10,8 @@ let numParticles = 100; // Number of particles to be created
 
 let c1, c2;
 
+let happened = false;
+
 function Node(position, givenSize, givenR, givenG, givenB) {
 this.R = givenR;
 this.G = givenG;
@@ -87,6 +89,13 @@ function setup() {
 setTimeout(() => {
   resizeCanvas(windowWidth, windowHeight);
 }, 100);
+
+function RefreshfreshPage(){
+  if (happened == false){
+    location.reload();
+    happened = true;
+  }
+}
 
 c1 = color(0); 
 function windowResized() {
