@@ -89,7 +89,10 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
 }
 
-body {
+body { 
+  font-family: "Fjalla One", sans-serif;
+  text-align: center;
+  line-height: 1.7;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     background-color: var(--clr-bg-100);
@@ -161,6 +164,8 @@ svg {
 
 /* Header */
 .primary-header {
+    color: var(--clr-primary-100);
+    text-shadow: 2px 2px 10px rgba(0, 0, 10, 0.6); /* More prominent text shadow */
     font-size: var(--fs-900);
     font-weight: var(--fw-bold);
 }
@@ -168,6 +173,10 @@ svg {
 .skills-text {
     font-size: var(--fs-700);
     margin-block: var(--size-400);
+}
+.skills-text:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
 }
 
 .skills {
@@ -251,9 +260,16 @@ svg {
 }
 
 .testimonial {
-    border-radius: 0.5rem;
-    font-size: var(--fs-200);
-    padding: 2rem;
+  background-color: var(--clr-accent-100);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 0.5rem;
+  font-size: var(--fs-200);
+  padding: 2rem;
+}
+
+.testimonial:hover {
+  background-color: var(--clr-accent-500); /* Change to a more visible color */
+  transform: scale(1.05); /* Optionally scale the element */
 }
 
 .testimonial:nth-child(1) {
@@ -310,11 +326,13 @@ svg {
     text-decoration: none;
     transition: all 0.3s;
     width: fit-content;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .moreInformation:hover {
-    background-color: var(--clr-bg-100);
-    color: var(--clr-primary-100);
+  background-color: var(--clr-bg-100);
+  color: var(--clr-primary-100);
+  transform: scale(1.05); /* Slight scale-up on hover */
 }
 
 /* Utilities */
