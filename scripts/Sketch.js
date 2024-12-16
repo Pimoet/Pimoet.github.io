@@ -83,8 +83,16 @@ if (this.followingMouse) {
 
 // Setup Function
 function setup() {
-  
-c1 = color(0); //
+
+setTimeout(() => {
+  resizeCanvas(windowWidth, windowHeight);
+}, 100);
+
+c1 = color(0); 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight); // Resize to new dimensions
+}
+
 c2 = color(50, 50, 50);
 
 frameRate(FPS);
