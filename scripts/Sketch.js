@@ -10,8 +10,6 @@ let numParticles = 100; // Number of particles to be created
 
 let c1, c2;
 
-let happened = false;
-
 function Node(position, givenSize, givenR, givenG, givenB) {
 this.R = givenR;
 this.G = givenG;
@@ -83,43 +81,47 @@ if (this.followingMouse) {
 };
 }
 
-// Setup Function
+let isReloaded = localStorage.getItem('reloaded') === 'true';
+
 function setup() {
+  // Check if the page has been refreshed already
+  if (!isReloaded) {
+    // Set flag in localStorage to indicate the page should refresh
+    localStorage.setItem('reloaded', 'true');
+    
+    // Refresh the page after 500 ms
+    setTimeout(() => {
+      location.reload(); // Trigger the reload
+    }, 20);
+  }
 
-setTimeout(() => {
+  // Continue with the rest of your setup code
   resizeCanvas(windowWidth, windowHeight);
-  RefreshfreshPage();
-}, 500);
 
-function RefreshfreshPage(){
-  if (happened == false){
-    location.reload();
-    happened = true;
+  c1 = color(0);
+  c2 = color(50, 50, 50);
+  frameRate(FPS);
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0, 0);
+  canvas.style('z-index', '-1'); // Ensure canvas is behind other content
+
+  // Spawn particles
+  for (let i = 0; i < numParticles; i++) {
+    let position = createVector(random(width), random(height));
+    objs.push(new Node(position, random(20, 40), R, G, B));
   }
 }
 
-c1 = color(0); 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight); // Resize to new dimensions
-}
 
-c2 = color(50, 50, 50);
-
-frameRate(FPS);
-let canvas = createCanvas(windowWidth, windowHeight);
-canvas.position(0, 0);
-canvas.style('z-index', '-1'); // Ensure canvas is behind other content
-
-//spawn particles
-for (let i = 0; i < numParticles; i++) {
-let position = createVector(random(width), random(height));
-objs.push(new Node(position, random(20, 40), R, G, B));
-}
-}
 
 function draw() {
 
 // Draw gradient background
+if (isReloaded) {
+  localStorage.removeItem('reloaded');
+  isReloaded = false; // Ensure it doesn't reload again
+}
+
 for (let y = 0; y < height; y++) {
 let inter = map(y, 0, height, 0, 1);
 let c = lerpColor(c1, c2, inter);
