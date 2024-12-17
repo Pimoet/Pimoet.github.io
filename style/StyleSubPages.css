@@ -34,6 +34,42 @@
   --size-900: 5rem;
 }
 
+html,
+body {
+    overflow-y: scroll;  /* Keep scrolling functionality */
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 2px 0 black, 1px 1px 0 black;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.moreInformation {
+  text-shadow: none; /* Remove inherited shadow */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); /* White shadow */
+}
+
+.InfoImages:hover {
+  background-color: var(--clr-accent-500); /* Change to a more visible color */
+  transform: scale(1.07); /* Optionally scale the element */
+}
+
+
+/* Hide scrollbar for Firefox */
+body {
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Optional: For Internet Explorer/Edge (older versions) */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+}
 
 @media (min-width: 50em) {
 :root {
@@ -278,9 +314,8 @@ section .layout:nth-child(3) {
   }
 }
 
-/* Utility classes */
-
 .container {
+  width: 100%; /* Expand container to the full width */
   --max-width: 900px;
   --container-padding: 1rem;
 

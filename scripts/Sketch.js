@@ -1,84 +1,83 @@
 let objs = [];
 
 let FPS = 60;
-let R = 255;
-let G = 255;
-let B = 255;
 let particle = "CIRCLE";
 let isPlaying = true;
 let numParticles = 100; // Number of particles to be created
 
 let c1, c2;
 
-function Node(position, givenSize, givenR, givenG, givenB) {
-this.R = givenR;
-this.G = givenG;
-this.B = givenB;
-this.position = createVector(position.x, position.y);
-this.originalPosition = position.copy(); // Store the original position
-this.position.x += random(20) - 10;
-this.position.y += random(20) - 10;
-this.size = createVector(0, 0);
-this.sizeScale = 0.1;
-let randomSize = givenSize / 2 + random(10);
-this.baseSize = createVector(randomSize, randomSize);
-this.timepast = 0;
-this.isPlaying = isPlaying;
-this.rotateAngle = random(2 * PI);
-this.shapeType = particle;
-this.followingMouse = false;
-this.followTime = 0;
+function Node(position, givenSize) {
+  // Assign random colors to each particle
+  this.R = random(100, 255); // Random Red value
+  this.G = random(100, 255); // Random Green value
+  this.B = random(100, 255); // Random Blue value
+  
+  this.position = createVector(position.x, position.y);
+  this.originalPosition = position.copy(); // Store the original position
+  this.position.x += random(20) - 10;
+  this.position.y += random(20) - 10;
+  this.size = createVector(0, 0);
+  this.sizeScale = 0.1;
+  let randomSize = givenSize / 2 + random(10);
+  this.baseSize = createVector(randomSize, randomSize);
+  this.timepast = 0;
+  this.isPlaying = isPlaying;
+  this.rotateAngle = random(2 * PI);
+  this.shapeType = particle;
+  this.followingMouse = false;
+  this.followTime = 0;
 
-this.drawing = function () {
-noStroke();
-if (this.shapeType == particle) {
-push(); // Save current transformation matrix
-translate(this.position.x, this.position.y);
+  this.drawing = function () {
+    noStroke();
+    if (this.shapeType == particle) {
+      push(); // Save current transformation matrix
+      translate(this.position.x, this.position.y);
 
-  fill(
-    (this.size.x * this.R) / 10,
-    (this.size.x * this.G) / 10,
-    (this.size.x * this.B) / 10,
-    255
-  );
-  ellipse(
-    sin(this.timepast) * this.baseSize.x,
-    cos(this.timepast) * this.baseSize.y,
-    this.size.x,
-    this.size.y
-  );
+      fill(
+        (this.size.x * this.R) / 10,
+        (this.size.x * this.G) / 10,
+        (this.size.x * this.B) / 10,
+        255
+      );
+      ellipse(
+        sin(this.timepast) * this.baseSize.x,
+        cos(this.timepast) * this.baseSize.y,
+        this.size.x,
+        this.size.y
+      );
 
-  pop(); // Restore original transformation matrix
-}
-};
+      pop(); // Restore original transformation matrix
+    }
+  };
 
-this.update = function () {
-this.size = createVector(
-this.baseSize.x + sin(this.timepast) * this.baseSize.x * this.sizeScale,
-this.baseSize.y + sin(this.timepast) * this.baseSize.y * this.sizeScale
-);
-if (this.isPlaying) {
-this.timepast += 1 / FPS;
-}
+  this.update = function () {
+    this.size = createVector(
+      this.baseSize.x + sin(this.timepast) * this.baseSize.x * this.sizeScale,
+      this.baseSize.y + sin(this.timepast) * this.baseSize.y * this.sizeScale
+    );
+    if (this.isPlaying) {
+      this.timepast += 1 / FPS;
+    }
 
-if (dist(mouseX, mouseY, this.position.x, this.position.y) < 50 && !this.followingMouse) {
-  this.followingMouse = true;
-  this.followTime = millis();
-}
+    if (dist(mouseX, mouseY, this.position.x, this.position.y) < 50 && !this.followingMouse) {
+      this.followingMouse = true;
+      this.followTime = millis();
+    }
 
-// If following the mouse
-if (this.followingMouse) {
-  this.position.x = lerp(this.position.x, mouseX, 0.1);
-  this.position.y = lerp(this.position.y, mouseY, 0.1);
-  if (millis() - this.followTime > 500) {
-    this.followingMouse = false;
-  }
-} else {
-  //return
-  this.position.x = lerp(this.position.x, this.originalPosition.x, 0.01);
-  this.position.y = lerp(this.position.y, this.originalPosition.y, 0.01);
-}
-};
+    // If following the mouse
+    if (this.followingMouse) {
+      this.position.x = lerp(this.position.x, mouseX, 0.1);
+      this.position.y = lerp(this.position.y, mouseY, 0.1);
+      if (millis() - this.followTime > 500) {
+        this.followingMouse = false;
+      }
+    } else {
+      // Return to the original position
+      this.position.x = lerp(this.position.x, this.originalPosition.x, 0.01);
+      this.position.y = lerp(this.position.y, this.originalPosition.y, 0.01);
+    }
+  };
 }
 
 let isReloaded = localStorage.getItem('reloaded') === 'true';
@@ -88,7 +87,7 @@ function setup() {
   if (!isReloaded) {
     // Set flag in localStorage to indicate the page should refresh
     localStorage.setItem('reloaded', 'true');
-    
+
     // Refresh the page after 500 ms
     setTimeout(() => {
       location.reload(); // Trigger the reload
@@ -108,31 +107,28 @@ function setup() {
   // Spawn particles
   for (let i = 0; i < numParticles; i++) {
     let position = createVector(random(width), random(height));
-    objs.push(new Node(position, random(20, 40), R, G, B));
+    objs.push(new Node(position, random(20, 40)));
   }
 }
 
-
-
 function draw() {
+  // Draw gradient background
+  if (isReloaded) {
+    localStorage.removeItem('reloaded');
+    isReloaded = false; // Ensure it doesn't reload again
+  }
 
-// Draw gradient background
-if (isReloaded) {
-  localStorage.removeItem('reloaded');
-  isReloaded = false; // Ensure it doesn't reload again
-}
+  for (let y = 0; y < height; y++) {
+    let inter = map(y, 0, height, 0, 1);
+    let c = lerpColor(c1, c2, inter);
+    stroke(c);
+    line(0, y, width, y);
+  }
 
-for (let y = 0; y < height; y++) {
-let inter = map(y, 0, height, 0, 1);
-let c = lerpColor(c1, c2, inter);
-stroke(c);
-line(0, y, width, y);
-}
-
-// Draw particles
-noStroke();
-for (let i = 0; i < objs.length; i++) {
-objs[i].drawing();
-objs[i].update();
-}
+  // Draw particles
+  noStroke();
+  for (let i = 0; i < objs.length; i++) {
+    objs[i].drawing();
+    objs[i].update();
+  }
 }
