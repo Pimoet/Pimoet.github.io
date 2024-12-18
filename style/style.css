@@ -314,6 +314,12 @@ svg {
     }
 }
 
+.InfoImages:hover {
+    background-color: var(--clr-accent-500); /* Change to a more visible color */
+    transform: scale(1.07); /* Optionally scale the element */
+    transition: all 0.3s;
+}
+
 /* Buttons */
 .moreInformation {
     background-color: var(--clr-primary-100);
