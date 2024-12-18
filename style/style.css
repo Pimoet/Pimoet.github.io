@@ -173,10 +173,20 @@ svg {
 .skills-text {
     font-size: var(--fs-700);
     margin-block: var(--size-400);
+    text-decoration: none;
+    color: blue;
 }
 .skills-text:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease;
+}
+
+.TopHeaders{
+    font-weight: var(--fw-bold);
+}
+.TopHeaders:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
 }
 
 .skills {
@@ -230,7 +240,7 @@ svg {
 
 /* Grid section */
 .projects-text {
-    font-weight: var(--fw-bold);
+    
     font-size: var(--fs-900);
     margin-block: var(--size-400);
     margin-top: var(--size-900);
