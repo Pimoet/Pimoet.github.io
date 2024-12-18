@@ -183,6 +183,9 @@ svg {
 
 .TopHeaders{
     font-weight: var(--fw-bold);
+    font-size: 50%;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
 }
 .TopHeaders:hover{
     transform: translateY(-5px);
@@ -277,6 +280,10 @@ svg {
   padding: 2rem;
 }
 
+.testimonial-text{
+    justify-content: flex-end; /* Push the button to the bottom */
+    align-items: center; /* Align button horizontally in the center */
+}
 .testimonial:hover {
   background-color: var(--clr-accent-500); /* Change to a more visible color */
   transform: scale(1.05); /* Optionally scale the element */
@@ -336,12 +343,12 @@ svg {
     border-radius: 10rem;
     color: var(--clr-bg-100);
     display: inline-block;
+    align-self: flex-end;
     font-size: var(--fs-400);
     padding: var(--size-400);
     text-transform: uppercase;
     text-decoration: none;
     transition: all 0.3s;
-    width: fit-content;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
