@@ -7,11 +7,18 @@ let numParticles = 100; // Number of particles to be created
 
 let c1, c2;
 
+// Define the exact colors for the particles
+let particleColors = [
+  [117, 65, 200], // Purple
+  [72, 85, 106]   // Gray
+];
+
 function Node(position, givenSize) {
-  // Assign random colors to each particle
-  this.R = random(100, 255); // Random Red value
-  this.G = random(100, 255); // Random Green value
-  this.B = random(100, 255); // Random Blue value
+  // Randomly pick one of the exact defined colors
+  let selectedColor = random(particleColors); // Randomly pick purple or gray
+  this.R = selectedColor[0]; // Red value
+  this.G = selectedColor[1]; // Green value
+  this.B = selectedColor[2]; // Blue value
   
   this.position = createVector(position.x, position.y);
   this.originalPosition = position.copy(); // Store the original position
@@ -35,10 +42,10 @@ function Node(position, givenSize) {
       translate(this.position.x, this.position.y);
 
       fill(
-        (this.size.x * this.R) / 10,
-        (this.size.x * this.G) / 10,
-        (this.size.x * this.B) / 10,
-        255
+        this.R, // Use only the selected R value
+        this.G, // Use only the selected G value
+        this.B, // Use only the selected B value
+        255     // Full opacity
       );
       ellipse(
         sin(this.timepast) * this.baseSize.x,

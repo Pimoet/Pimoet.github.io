@@ -283,12 +283,12 @@ svg {
 }
 
 .testimonial:nth-child(3) {
-    background-color: var(--clr-accent-100);
+    background-color: var(--clr-accent-200);
     grid-area: three;
 }
 
 .testimonial:nth-child(4) {
-    background-color: var(--clr-accent-200);
+    background-color: var(--clr-accent-100);
     grid-area: four;
 }
 
